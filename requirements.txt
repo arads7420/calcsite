@@ -4,13 +4,17 @@ bs4==0.0.1
 certifi==2020.12.5
 chardet==4.0.0
 click==7.1.2
+dj-database-url==0.5.0
 Django==3.1.7
+django-heroku==0.3.1
 futures==3.1.1
 goslate==1.5.1
 idna==2.10
+psycopg2==2.8.6
 PyDictionary==2.0.1
 pytz==2021.1
 requests==2.25.1
 soupsieve==2.2
 sqlparse==0.4.1
 urllib3==1.26.3
+whitenoise==5.2.0
