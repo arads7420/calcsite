@@ -1,0 +1,61 @@
+{% include "header.html" %}
+{% load static %}
+
+<body>
+    {% include "navbar.html" %}
+
+    <div class="wrapper">
+        <!-- List of tools available -->
+        <div class="content-wrapper">
+            <div class="path">
+                <p><a href="{% url 'home' %}">Home</a> > <a href="{% url 'converters' %}">Converters</a> > <a
+                        href="{% url 'numberbaseconversion' %}">Number Base Conversion</a> > <a
+                        href="{% url 'hex-to-binary' %}">Hexadecimal to Binary Converter</a></p>
+            </div>
+            <div class="content-category">
+                <h2 class="page-heading"><i class="fas fa-exchange-alt page-logo"></i>Hexadecimal to Binary Converter</h2>
+                <hr>
+                <!-- App -->
+                <div class="app-container">
+
+                    <!-- Input Data -->
+                    <form class="app-form" action="{% url 'hex-to-binary' %}" method="POST">
+                        {% csrf_token %}
+                        {% if data.result.error %}
+                        <div class="error-box">
+                            <p>{{ data.result.error }}</p>
+                        </div>
+                        {% endif %}
+                        {{ form }}
+                        <a href="#" class="form-btn" id="form-submit" onclick="this.parentNode.submit();"><i
+                                class="fas fa-exchange-alt"></i>Convert</a>
+                        <a href="{% url 'binary-to-hex' %}" class="form-btn" id="swap"
+                            onclick="this.parentNode.submit();"><i class="fas fa-retweet"></i>Swap</a>
+                        <a class="clear-btn form-btn" title="Clear" onclick="document.getElementById('id_hex_input').value = '';
+                        document.getElementById('output-text').value = '';"><i
+                                class="far fa-trash-alt"></i></a>
+                    </form>
+                    <!-- Output Data -->
+                    <div class="output-container">
+                        <form>
+                            <label for="binary">Binary Value</label>
+                            <input type="text" id="output-text" disabled
+                                value="{% if data and not data.result.error %}{{ data.result }}{% endif %}">
+                        </form>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+        <!-- Sidebar -->
+        {% include "sidebar.html" %}
+    </div>
+    {% include "footer.html" %}
+
+
+    <script src="{% static 'basesite/script.js' %}"></script>
+
+</body>
+
+</html>

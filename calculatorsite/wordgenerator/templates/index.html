@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+    <header class="header">
+        <form action="/" method="POST">
+            {% csrf_token %}
+            {{ form }}
+            <input type="submit" value="Generate">
+        
+            <hr>
+            {% if data %}
+            <p>Generated {{ data | length }} Names:</p><br>
+            {% for name in data %}
+            <p>{{ name }}</p>
+            <br>
+            {% endfor %}
+            {% endif %}
+        </form>
+    </header>
+
+{% endblock content %}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator Swift | Converters</title>
+    {% load static %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" type="text/css">
+    <link rel="stylesheet" href="{% static 'basesite/style.css' %}" type="text/css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Exo&family=PT+Sans&family=Permanent+Marker&display=swap"
+    rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    {% include "navbar.html" %}
+
+    <div class="wrapper">
+        <!-- List of tools available -->
+        <div class="content-wrapper">
+            <div class="path"><p><a href="{% url 'home' %}">Home</a> > <a href="{% url 'converters' %}">Converters</a></p></div>
+            <div class="content-category">
+                <h2 class="page-heading"><i class="fas fa-exchange-alt page-logo"></i>Converters</h2>
+                <hr>
+                <h3 class="page-sub-heading-link"><a href="{% url 'numberbaseconversion' %}"><i class="fas fa-percentage"></i> Number Base Conversion</a></h3>
+                <h3 class="page-sub-heading-link"><a href="{% url 'temperature-conversion' %}"><i class="fas fa-temperature-low"></i>  Temperature
+                        Conversion</a></h3>
+
+                <h3 class="page-sub-heading-link"><a href="{% url 'length-conversion' %}"><i class="fas fa-ruler"></i>  Length Conversion</a></h3>
+                <h3 class="page-sub-heading-link"><a href="{% url 'area-conversion' %}"><i class="fas fa-chart-area"></i>  Area Conversion</a></h3>
+                <h3 class="page-sub-heading-link"><a href="{% url 'weight-conversion' %}"><i class="fas fa-weight-hanging"></i>  Weight Conversion</a></h3>
+                <h3 class="page-sub-heading-link"><a href="{% url 'power-conversion' %}"><i class="fas fa-bolt"></i>  Power Conversion</a></h3>
+                <h3 class="page-sub-heading-link"><a href="{% url 'pressure-conversion' %}"><i class="fas fa-tachometer-alt"></i>  Pressure Conversion</a></h3>
+                <h3 class="page-sub-heading-link"><a href="{% url 'frequency-conversion' %}"><i class="fas fa-broadcast-tower"></i>  Frequency Conversion</a></h3>
+                <h3 class="page-sub-heading-link"><a href="{% url 'speed-conversion' %}"><i class="fas fa-car-side"></i>  Speed Conversion</a></h3>
+                <h3 class="page-sub-heading-link"><a href="{% url 'volume-conversion' %}"><i class="fas fa-glass-whiskey"></i>  Volume Conversion</a></h3>
+            </div>
+        </div>
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-list">
+                <p class="sidebar-title">Quick Access</p>
+                <ul>
+                    <li><a href="#">Age Calculator</a></li>
+                    <li><a href="#">Calorie Calculator</a></li>
+                    <li><a href="#">Scientific Calculator</a></li>
+                    <li><a href="#">Length Calculator</a></li>
+                    <li><a href="#">Length Calculator</a></li>
+                    <li><a href="#">Length Calculator</a></li>
+                    <li><a href="#">Length Calculator</a></li>
+                    <li><a href="#">Length Calculator</a></li>
+                    <li><a href="#">Length Calculator</a></li>
+                    <li><a href="#">Length Calculator</a></li>
+                    <li><a href="#">Length Calculator</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    {% include "footer.html" %}
+
+
+    <script src="{% static 'basesite/script.js' %}"></script>
+</body>
+
+</html>

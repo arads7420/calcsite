@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Base Converters</title>
+    {% load static %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+        type="text/css">
+    <link rel="stylesheet" href="{% static 'basesite/style.css' %}" type="text/css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Exo&family=PT+Sans&family=Permanent+Marker&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    {% include "navbar.html" %}
+
+    <div class="wrapper">
+        <!-- List of tools available -->
+        <div class="content-wrapper">
+            <div class="path">
+                <p><a href="{% url 'home' %}">Home</a> > <a href="{% url 'converters' %}">Converters</a> > <a href="{% url 'converters' %}">Number Base Conversion</a></p>
+            </div>
+            <div class="content-category">
+                <h2 class="page-heading"><i class="fas fa-exchange-alt page-logo"></i>Number Base Converters</h2>
+                <hr>
+                <ul>
+                    <li><a href="{% url 'decimal-to-binary-octal-hexadecimal' %}">Decimal to Binary, Octal, Hexadecimal</a></li>
+                    <li><a href="{% url 'decimal-to-octal' %}">Decimal to Octal</a></li>
+                    <li><a href="{% url 'decimal-to-hexadecimal' %}">Decimal to Hexadecimal</a></li>
+                    <li><a href="{% url 'octal-to-decimal' %}">Octal to Decimal</a></li>
+                    <li><a href="{% url 'hexadecimal-to-decimal' %}">Hexadecimal to Decimal</a></li>
+                    <li><a href="{% url 'binary-to-decimal' %}">Binary to Decimal</a></li>
+                    <li><a href="{% url 'decimal-to-binary' %}">Decimal to Binary</a></li>
+                    <li><a href="{% url 'decimal-to-fraction' %}">Decimal to Fraction</a></li>
+                    <li><a href="{% url 'decimal-to-percentage' %}">Decimal to Percentage</a></li>
+                    <li><a href="{% url 'percentage-to-decimal' %}">Percentage to Decimal</a></li>
+                    <li><a href="{% url 'deg-to-dms' %}">Degrees to Degrees, Minutes and Seconds (DMS)</a></li>
+                    <li><a href="{% url 'dms-to-deg' %}">Degrees, Minutes and Seconds (DMS) to Degrees </a></li>
+                    <li><a href="{% url 'octal-to-binary' %}">Octal to Binary</a></li>
+                    <li><a href="{% url 'binary-to-octal' %}">Binary to Octal</a></li>
+                    <li><a href="{% url 'hex-to-binary' %}">Hexadecimal to Binary</a></li>
+                    <li><a href="{% url 'binary-to-hex' %}">Binary to Hexadecimal</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-list">
+                <p class="sidebar-title">Quick Access</p>
+                <ul>
+                    <li><a href="#">Age Calculator</a></li>
+                    <li><a href="#">Calorie Calculator</a></li>
+                    <li><a href="#">Scientific Calculator</a></li>
+                    <li><a href="#">Length Calculator</a></li>
+                    <li><a href="#">Length Calculator</a></li>
+                    <li><a href="#">Length Calculator</a></li>
+                    <li><a href="#">Length Calculator</a></li>
+                    <li><a href="#">Length Calculator</a></li>
+                    <li><a href="#">Length Calculator</a></li>
+                    <li><a href="#">Length Calculator</a></li>
+                    <li><a href="#">Length Calculator</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    {% include "footer.html" %}
+
+
+    <script src="{% static 'basesite/script.js' %}"></script>
+</body>
+
+</html>

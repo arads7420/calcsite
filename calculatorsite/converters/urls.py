@@ -1,0 +1,33 @@
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('', views.converters, name='converters'),
+    path('numberbaseconversion/', views.numberbaseconversion, name='numberbaseconversion'),
+    path('numberbase/decimal-to-binary-octal-hexadecimal/', views.decimal_to_bin_octal_hex, name="decimal-to-binary-octal-hexadecimal"),
+    path('numberbase/decimal-to-any-base/', views.decimal_to_any_base, name="decimal-to-any-base"),
+    path('numberbase/decimal-to-octal/', views.decimal_to_octal, name="decimal-to-octal"),
+    path('numberbase/octal-to-decimal/', views.octal_to_decimal, name="octal-to-decimal"),
+    path('numberbase/decimal-to-hexadecimal/', views.decimal_to_hexadecimal, name="decimal-to-hexadecimal"),
+    path('numberbase/hexadecimal-to-decimal/', views.hexadecimal_to_decimal, name="hexadecimal-to-decimal"),
+    path('numberbase/binary-to-decimal/', views.binary_to_decimal, name="binary-to-decimal"),
+    path('numberbase/decimal-to-binary/', views.decimal_to_binary, name="decimal-to-binary"),
+    path('numberbase/decimal-to-fraction/', views.decimal_to_fraction, name="decimal-to-fraction"),
+    path('numberbase/decimal-to-percentage/', views.decimal_to_percentage, name="decimal-to-percentage"),
+    path('numberbase/percentage-to-decimal', views.percentage_to_decimal, name="percentage-to-decimal"),
+    path('numberbase/decimal-degrees-to-degrees-minutes-seconds/', views.deg_to_dms, name="deg-to-dms"),
+    path('numberbase/degrees-minutes-seconds-to-decimal-degrees/', views.dms_to_deg, name="dms-to-deg"),
+    path('numberbase/octal-to-binary/', views.octal_to_binary, name="octal-to-binary"),
+    path('numberbase/binary-to-octal/', views.binary_to_octal, name="binary-to-octal"),
+    path('numberbase/hex-to-binary/', views.hex_to_binary, name="hex-to-binary"),
+    path('numberbase/binary-to-hex/', views.binary_to_hex, name="binary-to-hex"),
+    path('length-conversion/', views.length_conversion, name="length-conversion"),
+    path('temperature-conversion/', views.temperature_conversion, name="temperature-conversion"),
+    path('area-conversion/', views.area_conversion, name="area-conversion"),
+    path('weight-conversion/', views.weight_conversion, name="weight-conversion"),
+    path('power-conversion/', views.power_conversion, name="power-conversion"),
+    path('pressure-conversion/', views.pressure_conversion, name="pressure-conversion"),
+    path('frequency-conversion/', views.frequency_conversion, name="frequency-conversion"),
+    path('speed-conversion/', views.speed_conversion, name="speed-conversion"),
+    path('volume-conversion/', views.volume_conversion, name="volume-conversion"),
+]

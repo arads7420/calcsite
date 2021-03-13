@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator Swift</title>
+    {% load static %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" type="text/css">
+    <link rel="stylesheet" href="{% static 'basesite/style.css' %}" type="text/css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Exo&family=PT+Sans&family=Permanent+Marker&display=swap"
+    rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="site-name">
+                <p><a href="#"><span class="first-part">Calculator</span> <span class="second-part">Swift</span></a></p>
+            </div>
+            <div class="navlinks" id="navlinks">
+                <ul>
+                    <li>
+                        <a href="#">Generators</a>
+                    </li>
+                    <li><a href="{% url 'converters' %}">Converters</a></li>
+                    <li><a href="#">Calculators</a></li>
+                </ul>
+            </div>
+            <div class="burger" id="burger">
+                <div class="line-1"></div>
+                <div class="line-2"></div>
+                <div class="line-3"></div>
+            </div>
+        </div>
+    </nav>
+    <div class="wrapper">
+        <!-- List of tools available -->
+        <div class="content-wrapper">
+            <div class="accordion">
+                <div class="accordion-item">
+                    <button class="accordion-header"><i class="fas fa-calculator acc-logo"></i><p class="head-title">Calculators</p><i class="fas fa-angle-down acc-arrow"></i></button>
+                    <div class="accordion-body">
+                        <ul>
+                            <li><a href="#">Age Calculator</a></li>
+                            <li><a href="#">Calorie Calculator</a></li>
+                            <li><a href="#">Scientific Calculator</a></li>
+                            <li><a href="#">Length Calculator</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-header"><i class="fas fa-exchange-alt acc-logo"></i><p class="head-title">Converters</p><i class="fas fa-angle-down acc-arrow"></i></button>
+                    <div class="accordion-body">
+                        <ul>
+                            <li><a href="{% url 'numberbaseconversion' %}">Number Base Conversion</a></li>
+                            <li><a href="{% url 'length-conversion' %}">Length Conversion</a></li>
+                            <li><a href="{% url 'area-conversion' %}">Area Conversion</a></li>
+                            <li><a href="{% url 'weight-conversion' %}">Weight Conversion</a></li>
+                            <li><a href="{% url 'volume-conversion' %}">Volume Conversion</a></li>
+                            <li><a href="{% url 'temperature-conversion' %}">Temperature Conversion</a></li>
+                            <li><a href="{% url 'frequency-conversion' %}">Frequency Conversion</a></li>
+                            <li><a href="{% url 'speed-conversion' %}">Speed Conversion</a></li>
+                            <li><a href="{% url 'power-conversion' %}">Power Conversion</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-header"><i class="fas fa-dumbbell acc-logo"></i><p class="head-title">Health & Fitness</p><i class="fas fa-angle-down acc-arrow"></i></button>
+                    <div class="accordion-body">
+                        <ul>
+                            <li><a href="#">Age Calculator</a></li>
+                            <li><a href="#">Calorie Calculator</a></li>
+                            <li><a href="#">Scientific Calculator</a></li>
+                            <li><a href="#">Length Calculator</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-header"><i class="fas fa-atom acc-logo"></i><p class="head-title">Science</p><i class="fas fa-angle-down acc-arrow"></i></button>
+                    <div class="accordion-body">
+                        <ul>
+                            <li><a href="#">Age Calculator</a></li>
+                            <li><a href="#">Calorie Calculator</a></li>
+                            <li><a href="#">Scientific Calculator</a></li>
+                            <li><a href="#">Length Calculator</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-header"><i class="fas fa-cog acc-logo"></i><p class="head-title">Generators</p><i class="fas fa-angle-down acc-arrow"></i></button>
+                    <div class="accordion-body">
+                        <ul>
+                            <li><a href="#">Age Calculator</a></li>
+                            <li><a href="#">Calorie Calculator</a></li>
+                            <li><a href="#">Scientific Calculator</a></li>
+                            <li><a href="#">Length Calculator</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-header"><i class="fas fa-toolbox acc-logo"></i><p class="head-title">Web Tools</p><i class="fas fa-angle-down acc-arrow"></i></button>
+                    <div class="accordion-body">
+                        <ul>
+                            <li><a href="#">Age Calculator</a></li>
+                            <li><a href="#">Calorie Calculator</a></li>
+                            <li><a href="#">Scientific Calculator</a></li>
+                            <li><a href="#">Length Calculator</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-list">
+                <p class="sidebar-title">Quick Access</p>
+                <ul>
+                    <li><a href="#">Age Calculator</a></li>
+                    <li><a href="#">Calorie Calculator</a></li>
+                    <li><a href="#">Scientific Calculator</a></li>
+                    <li><a href="#">Length Calculator</a></li>
+                    <li><a href="#">Length Calculator</a></li>
+                    <li><a href="#">Length Calculator</a></li>
+                    <li><a href="#">Length Calculator</a></li>
+                    <li><a href="#">Length Calculator</a></li>
+                    <li><a href="#">Length Calculator</a></li>
+                    <li><a href="#">Length Calculator</a></li>
+                    <li><a href="#">Length Calculator</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    {% include "footer.html" %}
+
+
+    <script src="{% static 'basesite/script.js' %}"></script>
+</body>
+
+</html>

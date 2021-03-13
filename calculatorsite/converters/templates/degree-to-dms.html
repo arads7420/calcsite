@@ -1,0 +1,68 @@
+{% include "header.html" %}
+{% load static %}
+
+<body>
+    {% include "navbar.html" %}
+
+    <div class="wrapper">
+        <!-- List of tools available -->
+        <div class="content-wrapper">
+            <div class="path">
+                <p><a href="{% url 'home' %}">Home</a> > <a href="{% url 'converters' %}">Converters</a> > <a
+                        href="{% url 'numberbaseconversion' %}">Number Base Conversion</a> > <a
+                        href="{% url 'deg-to-dms' %}">Decimal Degree to Degree, Minutes and Seconds</a></p>
+            </div>
+            <div class="content-category">
+                <h2 class="page-heading"><i class="fas fa-exchange-alt page-logo"></i>Decimal Degree to Degree, Minutes and Seconds</h2>
+                <hr>
+                <!-- App -->
+                <div class="app-container">
+
+                    <!-- Input Data -->
+                    <form class="app-form" action="{% url 'deg-to-dms' %}" method="POST">
+                        {% csrf_token %}
+                        {% if data.result.error %}
+                        <div class="error-box">
+                            <p>{{ data.result.error }}</p>
+                        </div>
+                        {% endif %}
+                        {{ form }}
+                        <a href="#" class="form-btn" id="form-submit" onclick="this.parentNode.submit();"><i
+                                class="fas fa-exchange-alt"></i>Convert</a>
+                        <a href="{% url 'dms-to-deg' %}" class="form-btn" id="swap"
+                            onclick="this.parentNode.submit();"><i class="fas fa-retweet"></i>Swap</a>
+                        <a class="clear-btn form-btn" title="Clear" onclick="document.getElementById('id_degree_input').value = ''; 
+                        document.getElementById('output-text-1').value = ''; document.getElementById('output-text-2').value = ''; 
+                        document.getElementById('output-text-3').value = '';"><i
+                                class="far fa-trash-alt"></i></a>
+                    </form>
+                    <!-- Output Data -->
+                    <div class="output-container">
+                        <form>
+                            <label for="binary"> Degrees </label>
+                            <input type="text" id="output-text-1" disabled
+                                value="{% if data and not data.result.error %}{{ data.result.deg }}{% endif %}">
+                            <label for="binary"> Minutes </label>
+                            <input type="text" id="output-text-2" disabled
+                                value="{% if data and not data.result.error %}{{ data.result.min }}{% endif %}">
+                            <label for="binary"> Seconds </label>
+                            <input type="text" id="output-text-3" disabled
+                                value="{% if data and not data.result.error %}{{ data.result.sec }}{% endif %}">
+                        </form>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+        <!-- Sidebar -->
+        {% include "sidebar.html" %}
+    </div>
+    {% include "footer.html" %}
+
+
+    <script src="{% static 'basesite/script.js' %}"></script>
+
+</body>
+
+</html>
