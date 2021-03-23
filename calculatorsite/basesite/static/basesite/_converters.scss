@@ -104,6 +104,7 @@
 .clear-btn {
     opacity: 0.9;
     background-color: rgb(231, 80, 80) !important;
+    border-bottom: 3px solid rgb(161, 54, 54) !important;
     width: 50px !important;
     margin-right: 5px;
     &:hover {
@@ -144,6 +145,9 @@ hr {
         font-family: 'PT Sans', sans-serif;
         background-color: rgb(55, 126, 173);
         border-radius: 3px;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        border-bottom: 3px solid rgb(39, 92, 128);
         color: rgb(255, 255, 255);
         cursor: pointer;
         font-size: 17px;
@@ -164,6 +168,7 @@ hr {
         padding: 8px 10px;
         font-size: 17px;
         margin-bottom: 10px;
+        max-width: 250px;
     }
     .input-box {
         // width: 32vw;
@@ -195,6 +200,7 @@ hr {
     margin-top: 10px;
     margin-bottom: 10px;
     align-items: center;
+
     input[type=text] {
         margin: 0;
     }
@@ -244,11 +250,14 @@ hr {
         font-size: 15px;
     }
     .path, .content-category {
-        width: 80%;
+        width: 100%;
     }
     .app-form {
         input[type=text] {
-            width: 100%;
+            max-width: 250px;
+        }
+        select {
+            max-width: 250px;
         }
     }
     .output-container {

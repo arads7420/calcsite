@@ -569,6 +569,7 @@ nav {
 .clear-btn {
   opacity: 0.9;
   background-color: #e75050 !important;
+  border-bottom: 3px solid #a13636 !important;
   width: 50px !important;
   margin-right: 5px;
 }
@@ -622,6 +623,9 @@ hr {
   font-family: 'PT Sans', sans-serif;
   background-color: #377ead;
   border-radius: 3px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-bottom: 3px solid #275c80;
   color: white;
   cursor: pointer;
   font-size: 17px;
@@ -646,6 +650,7 @@ hr {
   padding: 8px 10px;
   font-size: 17px;
   margin-bottom: 10px;
+  max-width: 250px;
 }
 
 .app-form .input-box {
@@ -748,10 +753,13 @@ hr {
     font-size: 15px;
   }
   .path, .content-category {
-    width: 80%;
+    width: 100%;
   }
   .app-form input[type=text] {
-    width: 100%;
+    max-width: 250px;
+  }
+  .app-form select {
+    max-width: 250px;
   }
   .output-container {
     width: 100%;
