@@ -548,6 +548,7 @@ nav {
   width: 75%;
   margin: auto;
   margin-top: 20px;
+  margin-left: 40px;
 }
 
 .path p a {
@@ -758,7 +759,7 @@ hr {
     width: 100%;
   }
   .app-form input[type=text] {
-    max-width: 250px;
+    width: 100%;
   }
   .app-form select {
     max-width: 250px;
@@ -777,6 +778,10 @@ hr {
   }
   .output-box {
     width: 100%;
+  }
+  .path {
+    margin-left: 20px;
+    max-width: 70%;
   }
 }
 
