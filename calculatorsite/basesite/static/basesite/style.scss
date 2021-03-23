@@ -61,6 +61,7 @@ nav {
 }
 
 .navlinks {
+    display: none;
     ul {
         li {
             list-style-type: none;
@@ -260,6 +261,7 @@ nav {
 
 @media screen and (max-width: 872px){ 
     .navlinks {
+        display: none;
         position: absolute;
         right: 0;
         top: 80px;
@@ -269,6 +271,7 @@ nav {
         transition: transform 0.3s ease-in;
     }
     .nav-active {
+        display: block;
         max-width: 500px;
         transform: translateX(0px);
         ul li {
@@ -307,7 +310,6 @@ nav {
             margin-bottom: 5px;
             background-color: rgb(36, 130, 170);
             border-radius: 2px;
-            transition: all 0.3s ease-in;
         }
     }
     .toggle .line-1 {
