@@ -710,8 +710,10 @@ hr {
 
 #swap {
   background-color: #efefef;
+  border-bottom: 3px solid #b6b6b6;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
   color: #0c3d53;
-  border: 1px solid grey;
 }
 
 .output-container {

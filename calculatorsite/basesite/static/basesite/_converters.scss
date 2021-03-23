@@ -139,7 +139,6 @@ hr {
         justify-content: center;
         align-items: center;
         padding: 10px 15px;
-        // margin-top: 10px;
         height: 40px;
         width: 100px;
         font-family: 'PT Sans', sans-serif;
@@ -211,8 +210,10 @@ hr {
 
 #swap {
     background-color: #efefef;
+    border-bottom: 3px solid #b6b6b6;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
     color: rgb(12, 61, 83);
-    border: 1px solid grey;
 }
 .output-container {
     margin-top: 30px;
