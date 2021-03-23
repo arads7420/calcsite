@@ -75,10 +75,6 @@ nav {
           align-items: center;
 }
 
-.navlinks {
-  display: none;
-}
-
 .navlinks ul li {
   list-style-type: none;
 }
