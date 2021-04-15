@@ -20,4 +20,5 @@ urlpatterns = [
     path('generator/', include('wordgenerator.urls')),
     path('', include('basesite.urls')),
     path('converters/', include('converters.urls')),
+    path('calculators/', include('calculators.urls'))
 ]

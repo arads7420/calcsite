@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'calculators.apps.CalculatorsConfig',
     'basesite.apps.BasesiteConfig',
     'converters.apps.ConvertersConfig',
     'wordgenerator.apps.WordgeneratorConfig',

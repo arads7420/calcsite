@@ -786,4 +786,60 @@ hr {
     width: 32vw;
   }
 }
+
+.matrix-name {
+  font-size: 14px;
+}
+
+.matrix-2x2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-top: 5px;
+  margin-bottom: 7px;
+  gap: 20px;
+  width: 160px;
+  padding: 5px;
+  border: 1px solid #b3b3ff;
+  background-color: #e0e0e0;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.matrix-2x2 .matrix-element {
+  width: 60px;
+  height: 40px;
+  padding-left: 3px;
+}
+
+.matrix-3x3 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-top: 5px;
+  margin-bottom: 7px;
+  gap: 10px;
+  width: 250px;
+  padding: 5px;
+  border: 1px solid #b3b3ff;
+  background-color: #e0e0e0;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.matrix-3x3 .matrix-element {
+  width: 60px;
+  height: 40px;
+  padding-left: 3px;
+}
+
+.output-container .matrix-name {
+  font-family: 'PT Sans', sans-serif;
+}
 /*# sourceMappingURL=style.css.map */

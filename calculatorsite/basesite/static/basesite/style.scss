@@ -327,3 +327,48 @@ nav {
 
 //Other Pages
 @import "converters";
+
+//Calculators
+.matrix-name {
+    font-size: 14px;
+}
+.matrix-2x2 {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 5px;
+    margin-bottom: 7px;
+    gap: 20px;
+    width: 160px;
+    padding: 5px;
+    border: 1px solid rgb(179, 179, 791);
+    background-color: #e0e0e0;
+    justify-content: space-evenly;
+    .matrix-element {
+        width: 60px;
+        height: 40px;
+        padding-left: 3px;
+    }
+}
+.matrix-3x3 {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 5px;
+    margin-bottom: 7px;
+    gap: 10px;
+    width: 250px;
+    padding: 5px;
+    border: 1px solid rgb(179, 179, 791);
+    background-color: #e0e0e0;
+    justify-content: space-evenly;
+    .matrix-element {
+        width: 60px;
+        height: 40px;
+        padding-left: 3px;
+    }
+}
+
+.output-container {
+    .matrix-name {
+        font-family: 'PT Sans', sans-serif;;
+    }
+}

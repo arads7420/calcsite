@@ -23,7 +23,7 @@
     <nav class="navbar">
         <div class="nav-container">
             <div class="site-name">
-                <p><a href="#"><span class="first-part">Calculator</span> <span class="second-part">Swift</span></a></p>
+                <p><a href="{% url 'home' %}"><span class="first-part">Calculator</span> <span class="second-part">Swift</span></a></p>
             </div>
             <div class="navlinks" id="navlinks">
                 <ul>
@@ -31,7 +31,7 @@
                         <a href="#">Generators</a>
                     </li>
                     <li><a href="{% url 'converters' %}">Converters</a></li>
-                    <li><a href="#">Calculators</a></li>
+                    <li><a href="{% url 'calculators' %}">Calculators</a></li>
                 </ul>
             </div>
             <div class="burger" id="burger">
@@ -49,10 +49,10 @@
                     <button class="accordion-header"><i class="fas fa-calculator acc-logo"></i><p class="head-title">Calculators</p><i class="fas fa-angle-down acc-arrow"></i></button>
                     <div class="accordion-body">
                         <ul>
-                            <li><a href="#">Age Calculator</a></li>
-                            <li><a href="#">Calorie Calculator</a></li>
-                            <li><a href="#">Scientific Calculator</a></li>
-                            <li><a href="#">Length Calculator</a></li>
+                            <li><a href="{% url 'addmatrices2x2' %}">Add Two 2x2 Matrices</a></li>
+                            <li><a href="{% url 'addmatrices3x3' %}">Add Two 3x3 Matrices</a></li>
+                            <li><a href="{% url 'multiplymatrices3x3' %}">Multiply Two 3x3 Matrices</a></li>
+                            <li><a href="{% url 'multiplymatrices2x2' %}">Multiply Two 2x2 Matrices</a></li>
                         </ul>
                     </div>
                 </div>
