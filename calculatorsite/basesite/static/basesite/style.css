@@ -212,6 +212,7 @@ nav {
   .accordion {
     overflow: hidden;
     border-radius: 4px;
+    max-width: 80%;
   }
   .accordion-header {
     font-size: 16px;
@@ -839,7 +840,102 @@ hr {
   padding-left: 3px;
 }
 
+.matrix-4x4 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-top: 5px;
+  margin-bottom: 7px;
+  gap: 10px;
+  width: 300px;
+  padding: 5px;
+  border: 1px solid #b3b3ff;
+  background-color: #e0e0e0;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.matrix-4x4 .matrix-element {
+  width: 60px;
+  height: 40px;
+  padding-left: 3px;
+}
+
+.matrix-5x5 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-top: 5px;
+  margin-bottom: 7px;
+  gap: 10px;
+  width: 400px;
+  padding: 5px;
+  border: 1px solid #b3b3ff;
+  background-color: #e0e0e0;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.matrix-5x5 .matrix-element {
+  width: 60px;
+  height: 40px;
+  padding-left: 3px;
+}
+
 .output-container .matrix-name {
   font-family: 'PT Sans', sans-serif;
+}
+
+.link-btn {
+  display: inline-block;
+  margin-top: 20px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 5px 10px;
+  border-radius: 5px;
+  background-color: #5c5c5c;
+  border-bottom: 3px solid #3b3b3b;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  text-decoration: none;
+  color: #fafafa;
+  font-family: 'PT Sans', sans-serif;
+}
+
+.link-btn:hover {
+  background-color: #4d4d4d;
+}
+
+.MathJax {
+  font-size: 1.1em !important;
+}
+
+.solution-container {
+  margin-top: 35px;
+  font-family: 'PT Sans', sans-serif;
+}
+
+.solution-container p {
+  font-size: 1.1rem;
+}
+
+.solution-container .solution-title {
+  font-size: 1.5rem;
+  color: #2482aa;
+  font-weight: bolder;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.solution-ques {
+  font-size: 1.1rem;
 }
 /*# sourceMappingURL=style.css.map */

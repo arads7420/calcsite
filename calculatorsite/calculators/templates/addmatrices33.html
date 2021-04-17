@@ -1,6 +1,6 @@
 {% include "header.html" %}
 {% load static %}
-
+</head>
 <body>
     {% include "navbar.html" %}
 
@@ -16,6 +16,9 @@
                 <hr>
                 <!-- App -->
                 <div class="app-container">
+                    <a href="{% url 'addmatrices2x2' %}" class="link-btn">2x2 Matrix</a>
+                    <a href="{% url 'addmatrices4x4' %}" class="link-btn">4x4 Matrix</a>
+                    <a href="{% url 'addmatrices5x5' %}" class="link-btn">5x5 Matrix</a>
 
                     <!-- Input Data -->
                     <form class="app-form" action="{% url 'addmatrices3x3' %}" method="POST">

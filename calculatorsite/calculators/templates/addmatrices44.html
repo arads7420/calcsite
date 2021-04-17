@@ -1,0 +1,178 @@
+{% include "header.html" %}
+{% load static %}
+</head>
+<body>
+    {% include "navbar.html" %}
+
+    <div class="wrapper">
+        <!-- List of tools available -->
+        <div class="content-wrapper">
+            <div class="path">
+                <p><a href="{% url 'home' %}">Home</a> > <a href="{% url 'calculators' %}">Calculators</a> > <a
+                        href="{% url 'addmatrices4x4' %}">Add Two 4x4 Matrices</a></p>
+            </div>
+            <div class="content-category">
+                <h2 class="page-heading">Add Two 4x4 Matrices</h2>
+                <hr>
+                <!-- App -->
+                <div class="app-container">
+                    <a href="{% url 'addmatrices2x2' %}" class="link-btn">2x2 Matrix</a>
+                    <a href="{% url 'addmatrices3x3' %}" class="link-btn">3x3 Matrix</a>
+                    <a href="{% url 'addmatrices5x5' %}" class="link-btn">5x5 Matrix</a>
+
+                    <!-- Input Data -->
+                    <form class="app-form" action="{% url 'addmatrices4x4' %}" method="POST">
+                        {% csrf_token %}
+                        {% if data.result.error %}
+                        <div class="error-box">
+                            <p>{{ data.result.error }}</p>
+                        </div>
+                        {% endif %}
+                        <p class="matrix-name">Matrix-A</p>
+                        <div class="matrix-4x4">
+                            <input type="number" class="matrix-element" name="a11"
+                                value="{% if form.a11.value != 'None' %}{{form.a11.value}}{% endif %}">
+                            <input type="number" class="matrix-element" name="a12"
+                                value="{% if form.a12.value != 'None' %}{{form.a12.value}}{% endif %}">
+                            <input type="number" class="matrix-element" name="a13"
+                                value="{% if form.a13.value != 'None' %}{{form.a13.value}}{% endif %}">
+                            <input type="number" class="matrix-element" name="a14"
+                                value="{% if form.a13.value != 'None' %}{{form.a14.value}}{% endif %}">
+                            <input type="number" class="matrix-element" name="a21"
+                                value="{% if form.a21.value != 'None' %}{{form.a21.value}}{% endif %}">
+                            <input type="number" class="matrix-element" name="a22"
+                                value="{% if form.a22.value != 'None' %}{{form.a22.value}}{% endif %}">
+                            <input type="number" class="matrix-element" name="a23"
+                                value="{% if form.a23.value != 'None' %}{{form.a23.value}}{% endif %}">
+                            <input type="number" class="matrix-element" name="a24"
+                                value="{% if form.a23.value != 'None' %}{{form.a24.value}}{% endif %}">
+                            <input type="number" class="matrix-element" name="a31"
+                                value="{% if form.a31.value != 'None' %}{{form.a31.value}}{% endif %}">
+                            <input type="number" class="matrix-element" name="a32"
+                                value="{% if form.a32.value != 'None' %}{{form.a32.value}}{% endif %}">
+                            <input type="number" class="matrix-element" name="a33"
+                                value="{% if form.a33.value != 'None' %}{{form.a33.value}}{% endif %}">
+                            <input type="number" class="matrix-element" name="a34"
+                                value="{% if form.a33.value != 'None' %}{{form.a34.value}}{% endif %}">
+                            <input type="number" class="matrix-element" name="a41"
+                                value="{% if form.a31.value != 'None' %}{{form.a41.value}}{% endif %}">
+                            <input type="number" class="matrix-element" name="a42"
+                                value="{% if form.a32.value != 'None' %}{{form.a42.value}}{% endif %}">
+                            <input type="number" class="matrix-element" name="a43"
+                                value="{% if form.a33.value != 'None' %}{{form.a43.value}}{% endif %}">
+                            <input type="number" class="matrix-element" name="a44"
+                                value="{% if form.a33.value != 'None' %}{{form.a44.value}}{% endif %}">
+                        </div>
+                        <p class="matrix-name">Matrix-B</p>
+                        <div class="matrix-4x4">
+                            <input type="number" class="matrix-element" name="b11"
+                                value="{% if form.b11.value != 'None' %}{{form.b11.value}}{% endif %}">
+                            <input type="number" class="matrix-element" name="b12"
+                                value="{% if form.b12.value != 'None' %}{{form.b12.value}}{% endif %}">
+                            <input type="number" class="matrix-element" name="b13"
+                                value="{% if form.b13.value != 'None' %}{{form.b13.value}}{% endif %}">
+                            <input type="number" class="matrix-element" name="b14"
+                                value="{% if form.b13.value != 'None' %}{{form.b14.value}}{% endif %}">
+                            <input type="number" class="matrix-element" name="b21"
+                                value="{% if form.b21.value != 'None' %}{{form.b21.value}}{% endif %}">
+                            <input type="number" class="matrix-element" name="b22"
+                                value="{% if form.b22.value != 'None' %}{{form.b22.value}}{% endif %}">
+                            <input type="number" class="matrix-element" name="b23"
+                                value="{% if form.b23.value != 'None' %}{{form.b23.value}}{% endif %}">
+                            <input type="number" class="matrix-element" name="b24"
+                                value="{% if form.b23.value != 'None' %}{{form.b24.value}}{% endif %}">
+                            <input type="number" class="matrix-element" name="b31"
+                                value="{% if form.b31.value != 'None' %}{{form.b31.value}}{% endif %}">
+                            <input type="number" class="matrix-element" name="b32"
+                                value="{% if form.b32.value != 'None' %}{{form.b32.value}}{% endif %}">
+                            <input type="number" class="matrix-element" name="b33"
+                                value="{% if form.b33.value != 'None' %}{{form.b33.value}}{% endif %}">
+                            <input type="number" class="matrix-element" name="b34"
+                                value="{% if form.b33.value != 'None' %}{{form.b34.value}}{% endif %}">
+                            <input type="number" class="matrix-element" name="b41"
+                                value="{% if form.b31.value != 'None' %}{{form.b41.value}}{% endif %}">
+                            <input type="number" class="matrix-element" name="b42"
+                                value="{% if form.b32.value != 'None' %}{{form.b42.value}}{% endif %}">
+                            <input type="number" class="matrix-element" name="b43"
+                                value="{% if form.b33.value != 'None' %}{{form.b43.value}}{% endif %}">
+                            <input type="number" class="matrix-element" name="b44"
+                                value="{% if form.b33.value != 'None' %}{{form.b44.value}}{% endif %}">
+                        </div>
+
+                        <a href="#" class="form-btn" id="form-submit" onclick="this.parentNode.submit();">Add</a>
+                        <a class="clear-btn form-btn" title="Clear"
+                            onclick="document.querySelectorAll('.matrix-output').forEach(el => {el.value=''});
+                                                document.querySelectorAll('.matrix-element').forEach(el => {el.value=''});"><i
+                                class="far fa-trash-alt"></i></a>
+                    </form>
+                    <!-- Output Data -->
+                    <div class="output-container">
+                        <p class="matrix-name">Result</p>
+                        <div class="matrix-4x4">
+                            <input type="number" disabled class="matrix-element matrix-output"
+                                value="{{data.result.0.0}}">
+                            <input type="number" disabled class="matrix-element matrix-output"
+                                value="{{data.result.0.1}}">
+                            <input type="number" disabled class="matrix-element matrix-output"
+                                value="{{data.result.0.2}}">
+                            <input type="number" disabled class="matrix-element matrix-output"
+                                value="{{data.result.0.3}}">
+                            <input type="number" disabled class="matrix-element matrix-output"
+                                value="{{data.result.1.0}}">
+                            <input type="number" disabled class="matrix-element matrix-output"
+                                value="{{data.result.1.1}}">
+                            <input type="number" disabled class="matrix-element matrix-output"
+                                value="{{data.result.1.2}}">
+                            <input type="number" disabled class="matrix-element matrix-output"
+                                value="{{data.result.1.3}}">
+                            <input type="number" disabled class="matrix-element matrix-output"
+                                value="{{data.result.2.0}}">
+                            <input type="number" disabled class="matrix-element matrix-output"
+                                value="{{data.result.2.1}}">
+                            <input type="number" disabled class="matrix-element matrix-output"
+                                value="{{data.result.2.2}}">
+                            <input type="number" disabled class="matrix-element matrix-output"
+                                value="{{data.result.2.3}}">
+                            <input type="number" disabled class="matrix-element matrix-output"
+                                value="{{data.result.3.0}}">
+                            <input type="number" disabled class="matrix-element matrix-output"
+                                value="{{data.result.3.1}}">
+                            <input type="number" disabled class="matrix-element matrix-output"
+                                value="{{data.result.3.2}}">
+                            <input type="number" disabled class="matrix-element matrix-output"
+                                value="{{data.result.3.3}}">
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-list">
+                <p class="sidebar-title">Quick Access</p>
+                <ul>
+                    <li><a href="{% url 'addmatrices2x2' %}">Add Two 2x2 Matrices</a></li>
+                    <li><a href="{% url 'multiplymatrices2x2' %}">Multiply Two 2x2 Matrices</a></li>
+                    <li><a href="{% url 'multiplymatrices3x3' %}">Multiply Two 3x3 Matrices</a></li>
+                    <li><a href="#">Length Calculator</a></li>
+                    <li><a href="#">Length Calculator</a></li>
+                    <li><a href="#">Length Calculator</a></li>
+                    <li><a href="#">Length Calculator</a></li>
+                    <li><a href="#">Length Calculator</a></li>
+                    <li><a href="#">Length Calculator</a></li>
+                    <li><a href="#">Length Calculator</a></li>
+                    <li><a href="#">Length Calculator</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    {% include "footer.html" %}
+
+
+    <script src="{% static 'basesite/script.js' %}"></script>
+
+</body>
+
+</html>

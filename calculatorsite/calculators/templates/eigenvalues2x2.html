@@ -1,0 +1,134 @@
+{% include "header.html" %}
+{% load static %}
+</head>
+<body>
+    {% include "navbar.html" %}
+
+    <div class="wrapper">
+        <!-- List of tools available -->
+        <div class="content-wrapper">
+            <div class="path">
+                <p><a href="{% url 'home' %}">Home</a> > <a href="{% url 'calculators' %}">Calculators</a> > <a
+                        href="{% url 'eigenvalues2x2' %}">Eigenvalues and Eigenvectors of a 2x2 Matrix </a></p>
+            </div>
+            
+            <div class="content-category">
+                <h2 class="page-heading">Eigenvalues and Eigenvectors of a 2x2 Matrix</h2>
+                <hr>
+                <!-- App -->
+                <div class="app-container">
+                    <a href="{% url 'eigenvalues3x3' %}" class="link-btn">3x3 Matrix</a>
+                    <!-- Input Data -->
+                    <form class="app-form" action="{% url 'eigenvalues2x2' %}" method="POST">
+                        {% csrf_token %}
+                        {% if data.result.error %}
+                        <div class="error-box">
+                            <p>{{ data.result.error }}</p>
+                        </div>
+                        {% endif %}
+                        <p class="matrix-name">Matrix</p>
+                        <div class="matrix-2x2">
+                            <input type="number" class="matrix-element" name="a11"
+                                value="{% if form.a11.value != None %}{{ form.a11.value }}{% endif %}">
+                            <input type="number" class="matrix-element" name="a12"
+                                value="{% if form.a12.value != None %}{{ form.a12.value }}{% endif %}">
+                            <input type="number" class="matrix-element" name="a21"
+                                value="{% if form.a21.value != None %}{{ form.a21.value }}{% endif %}">
+                            <input type="number" class="matrix-element" name="a22"
+                                value="{% if form.a22.value != None %}{{ form.a22.value }}{% endif %}">
+                        </div>
+
+                        <a href="#" class="form-btn" id="form-submit" onclick="this.parentNode.submit();">Calculate</a>
+                        <a class="clear-btn form-btn" title="Clear" onclick="document.querySelectorAll('.matrix-element').forEach(el => {el.value=''});
+                        document.getElementById('output-text').value = '';"><i class="far fa-trash-alt"></i></a>
+                    </form>
+
+                </div>
+
+                <!--Display Solution -->
+                {% if form.a22.value != None %} 
+                    <div class="solution-container">
+                        <p class="solution-title">EXPLANATION</p>
+                        <p class="solution-ques"><strong>Problem:</strong> How to Find the Eigen Values and Eigen Vectors of a 2x2 Matrix?</p>
+                        <p><strong>Solution:</strong></p>
+
+                        <p>$$ Input\ Matrix\ A = \begin{bmatrix}{{form.a11.value}} & {{form.a12.value}}\\{{form.a21.value}} & {{form.a22.value}}\end{bmatrix}$$</p>
+                        
+                        <p>The characteristic equation is \(|A - \lambda I| = 0\)</p>
+                        <p>$$ \lambda I = \lambda\begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix} = \begin{bmatrix} \lambda & 0 \\ 0 & \lambda \end{bmatrix}$$</p>
+                        <p>$$ i.e.\ |A - \lambda I| = \begin{vmatrix}{{form.a11.value}} - \lambda & {{form.a12.value}}\\{{form.a21.value}} &
+                        {{form.a22.value}} - \lambda\end{vmatrix} = 0$$ </p>
+
+                        {% if init == True %}
+                            <p>$$ \Rightarrow\ {{ default.result.poly }} = 0 $$</p>
+                            <p>Thus the eigen values are \(\lambda_1 = {{ default.result.val_1 }}, \lambda_2 = {{ default.result.val_2 }}\)</p><br>
+                            <p>If \(x\), \(y\) be the components of a eigen vector corresponding to the eigen value \(\lambda\), then</p>
+                            <p>$$ [A - \lambda I]X = \begin{bmatrix}{{form.a11.value}} - \lambda & {{form.a12.value}}\\{{form.a21.value}} &
+                            {{form.a22.value}} - \lambda\end{bmatrix}\begin{bmatrix}x \\ y\end{bmatrix} = 0$$</p>
+                            <p><strong>Case-1:</strong> \(\lambda_1 = {{ default.result.val_1 }}\):</p>
+                            <p>Eigen Vector is \(\begin{bmatrix} {{ default.result.vec1_1}} \\ {{ default.result.vec1_2 }}\end{bmatrix}\)</p>
+                            <br>
+                            <p><strong>Case-2:</strong> \(\lambda_2 = {{ default.result.val_2 }}\):</p>
+                            <p>Eigen Vector is \(\begin{bmatrix} {{ default.result.vec2_1 }} \\ {{ default.result.vec2_2 }}\end{bmatrix}\)</p>
+                            <p class="solution-title">ANSWER</p>
+                            <p>1) Eigen Value = \({{ default.result.val_1 }}\) &nbsp;&nbsp; Multiplicity = \({{ default.result.m_1}}\)
+                                &nbsp;&nbsp;
+                                Eigen Vector = \(\begin{bmatrix} {{ default.result.vec1_1 }} \\ {{ default.result.vec1_2 }}\end{bmatrix}\)</p>
+                            <p>2) Eigen Value = \({{ default.result.val_2 }}\) &nbsp;&nbsp;Multiplicity = \({{ default.result.m_2}}\)
+                                &nbsp;&nbsp;
+                                Eigen Vector = \(\begin{bmatrix} {{ default.result.vec2_1 }} \\ {{ default.result.vec2_2 }}\end{bmatrix}\)</p>
+                        
+                        {% else %}
+                            <p>$$ \Rightarrow\ {{ data.result.poly}} = 0 $$</p>
+                            <p>Thus the eigen values are \(\lambda_1 = {{ data.result.val_1 }}, \lambda_2 = {{ data.result.val_2}}\)</p><br>
+                            <p>If \(x\), \(y\) be the components of a eigen vector corresponding to the eigen value \(\lambda\), then</p>
+                            <p>$$ [A - \lambda I]X = \begin{bmatrix}{{form.a11.value}} - \lambda & {{form.a12.value}}\\{{form.a21.value}} &
+                                {{form.a22.value}} - \lambda\end{bmatrix}\begin{bmatrix}x \\ y\end{bmatrix} = 0$$</p>
+                            <p><strong>Case-1:</strong> \(\lambda_1 = {{ data.result.val_1 }}\):</p>
+                            <p>Eigen Vector is \(\begin{bmatrix} {{ data.result.vec1_1 }} \\ {{ data.result.vec1_2 }}\end{bmatrix}\)
+                            </p><br>
+                            <p><strong>Case-2:</strong> \(\lambda_2 = {{ data.result.val_2 }}\):</p>
+                            <p>Eigen Vector is \(\begin{bmatrix} {{ data.result.vec2_1 }} \\ {{ data.result.vec2_2 }}\end{bmatrix}\)
+                            </p>
+                            <p class="solution-title">ANSWER</p>
+                            <p>1) Eigen Value = \({{ data.result.val_1 }}\) &nbsp;&nbsp; Multiplicity = \({{ data.result.m_1}}\) &nbsp;&nbsp;
+                                Eigen Vector = \(\begin{bmatrix} {{ data.result.vec1_1 }} \\ {{ data.result.vec1_2 }}\end{bmatrix}\)</p>
+                            <p>2) Eigen Value = \({{ data.result.val_2 }}\) &nbsp;&nbsp; Multiplicity = \({{ data.result.m_2}}\)
+                                &nbsp;&nbsp;
+                                Eigen Vector = \(\begin{bmatrix} {{ data.result.vec2_1 }} \\ {{ data.result.vec2_2 }}\end{bmatrix}\)</p>
+                        {% endif %}
+                        
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+
+
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-list">
+                <p class="sidebar-title">Quick Access</p>
+                <ul>
+                    <li><a href="{% url 'addmatrices3x3' %}">Add Two 3x3 Matrices</a></li>
+                    <li><a href="{% url 'multiplymatrices3x3' %}"">Multiply Two 3x3 Matrices</a></li>
+                    <li><a href=" {% url 'multiplymatrices2x2' %}#">Multiply Two 2x2 Matrices</a></li>
+                    <li><a href="#">Length Calculator</a></li>
+                    <li><a href="#">Length Calculator</a></li>
+                    <li><a href="#">Length Calculator</a></li>
+                    <li><a href="#">Length Calculator</a></li>
+                    <li><a href="#">Length Calculator</a></li>
+                    <li><a href="#">Length Calculator</a></li>
+                    <li><a href="#">Length Calculator</a></li>
+                    <li><a href="#">Length Calculator</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    {% include "footer.html" %}
+
+
+    <script src="{% static 'basesite/script.js' %}"></script>
+
+</body>
+
+</html>
